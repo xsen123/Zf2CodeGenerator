@@ -1,0 +1,7 @@
+
+   				'#{Module}\Service\#{Model}Service'=>function($sm){
+   					$service = new \#{Module}\Service\#{Model}Service();
+   					$dbSettings = $this->_getDefaultDbSettings($sm);
+   					$service->prepareTableGateway($dbSettings);
+   					return $service;
+   				},

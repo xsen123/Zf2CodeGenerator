@@ -1,0 +1,27 @@
+
+            // 对整个模块的URL进行统一配置
+            '#{module}' => array(
+                'type'    => 'Literal',
+                'options' => array(
+                    'route'    => '/#{module}',
+                    'defaults' => array(
+                        '__NAMESPACE__' => '#{Module}\Controller',
+                        'controller'    => 'Index',
+                        'action'        => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action][/][:id]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'	     => '[a-zA-Z0-9_-]+',
+                            ),
+                        ),
+                    ),
+                ),
+            ),
