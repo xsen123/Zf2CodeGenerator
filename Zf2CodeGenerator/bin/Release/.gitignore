@@ -1,0 +1,6 @@
+/config/
+/module/
+/temp/
+*.pdb
+*.vshost.exe
+*.manifest

@@ -1,0 +1,7 @@
+
+    // 获取默认的数据库配置信息，方便Service统一使用
+    protected function _getDefaultDbSettings(\Zend\ServiceManager\ServiceManager $sm)
+    {
+    	$configArray = $sm->get('Config');
+    	return $configArray['db'];
+    }
